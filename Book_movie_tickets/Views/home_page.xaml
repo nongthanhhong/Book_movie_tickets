@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Book_movie_tickets.home_page"
+             Title="CINEMA"
+             >
+
+    <ContentPage.Content>
+        <ScrollView >
+            <StackLayout Spacing="0">
+                <Frame BackgroundColor="White"
+                       CornerRadius="0"
+                       Padding="2"
+                       >  
+                    
+                       <Label Text="Movie" TextColor="White" FontSize="Title" HeightRequest="50" WidthRequest="500" 
+                               VerticalOptions="Center" HorizontalOptions="Center" 
+                               VerticalTextAlignment="Center" HorizontalTextAlignment="Center"
+                               BackgroundColor="purple"></Label>
+                </Frame>
+                
+                <CollectionView x:Name="collection_movie" 
+                            ItemsLayout="HorizontalList"
+                            SelectionMode="Single" 
+                            SelectionChanged="collection_movie_SelectionChanged" BackgroundColor="purple"
+                            EmptyView="No items to display" >
+
+                    <CollectionView.ItemTemplate >
+
+                        <DataTemplate > 
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="2*"></RowDefinition>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+                                <Image Source="{Binding Poster}" Grid.Row="0" Grid.Column="0"
+                                   WidthRequest="300" HeightRequest="200"
+                                   HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" 
+                                   Margin="5"></Image>
+                                
+                                <Label Text="{Binding Title}" FontSize="Large" Grid.Row="1" Grid.Column="0" 
+                               HorizontalOptions="Center" VerticalOptions="Start"
+                                   TextColor="White"
+                               VerticalTextAlignment="End" HorizontalTextAlignment="Center"></Label>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                <Frame BackgroundColor="White"
+                       CornerRadius="0"
+                       Padding="2"
+                       >
+                    <Label Text="News" TextColor="White" FontSize="Title" HeightRequest="40" WidthRequest="500" 
+                       VerticalOptions="Center" HorizontalOptions="Center" 
+                       VerticalTextAlignment="End" HorizontalTextAlignment="Center"
+                       BackgroundColor="purple"></Label>
+                </Frame>
+                <ListView x:Name="movie_news" ItemSelected="movie_news_ItemSelected" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

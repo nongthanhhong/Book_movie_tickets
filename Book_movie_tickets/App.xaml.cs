@@ -10,7 +10,7 @@ namespace Book_movie_tickets
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new Main_Tabbed());
         }
 
         protected override void OnStart()
