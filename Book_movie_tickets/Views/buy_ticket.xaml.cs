@@ -48,12 +48,14 @@ namespace Book_movie_tickets
 
         private void Coll_rapchieu_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var selectedRap = e.CurrentSelection[0] as Model.RapChieu;
+            var MyCollectionView = sender as CollectionView;
+            var selectedRap = MyCollectionView.SelectedItem as Model.RapChieu;
             if (selectedRap != null)
             {
                 Navigation.PushAsync(new Views.ListFilm(selectedRap));
 
             }
+            MyCollectionView.SelectedItem = null;
         }
     }
 }

@@ -9,7 +9,4 @@
   <!--Pages can be added as references or inline-->
     <Book_movie_tickets:home_page Title="Trang Chủ" IconImageSource="home.png"></Book_movie_tickets:home_page>
     <Book_movie_tickets:buy_ticket Title="Mua Vé" IconImageSource="ticket.png"></Book_movie_tickets:buy_ticket>
-    
-
-
 </TabbedPage>

@@ -25,7 +25,7 @@ namespace Book_movie_tickets.Views
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-
+            Navigation.PushAsync(new buy_ticket());
         }
     }
 }

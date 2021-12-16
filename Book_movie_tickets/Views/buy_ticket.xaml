@@ -13,6 +13,7 @@
                 
                 <CollectionView x:Name="Coll_rapchieu" Margin="15"
                                 SelectionMode="Single" 
+                                EmptyView="No items to display"
                             SelectionChanged="Coll_rapchieu_SelectionChanged">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>

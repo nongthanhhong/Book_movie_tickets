@@ -22,8 +22,9 @@
                 <CollectionView x:Name="collection_movie" 
                             ItemsLayout="HorizontalList"
                             SelectionMode="Single" 
-                            SelectionChanged="collection_movie_SelectionChanged" BackgroundColor="purple"
-                            EmptyView="No items to display" >
+                            SelectionChanged="collection_movie_SelectionChanged"
+                            BackgroundColor="purple"
+                            EmptyView="No items to display">
 
                     <CollectionView.ItemTemplate >
 

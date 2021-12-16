@@ -31,12 +31,15 @@ namespace Book_movie_tickets
 
         private void collection_movie_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var selectedMovie = e.CurrentSelection[0] as Model.Movies;
+            var MyCollectionView = sender as CollectionView;
+
+            var selectedMovie = MyCollectionView.SelectedItem as Model.Movies;
             if (selectedMovie != null)
             {
                 Navigation.PushAsync(new Views.MovieDetail(selectedMovie));
 
             }
+            MyCollectionView.SelectedItem = null;
         }
 
         private void movie_news_ItemSelected(object sender, SelectedItemChangedEventArgs e)
