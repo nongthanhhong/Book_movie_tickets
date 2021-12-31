@@ -12,10 +12,12 @@ namespace Book_movie_tickets.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ListFilm : ContentPage
     {
+        Model.RapChieu selected_rap = new Model.RapChieu();
         public ListFilm(Model.RapChieu rapchieu)
         {
             InitializeComponent();
             create_collec_movie();
+            selected_rap = rapchieu;
             this.BindingContext = rapchieu;
         }
 
@@ -30,7 +32,15 @@ namespace Book_movie_tickets.Views
 
         private void Coll_film_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            var MyCollectionView = sender as CollectionView;
+            var selected_film = MyCollectionView.SelectedItem as Model.Movies;
 
+            if (selected_film != null)
+            {
+                Navigation.PushAsync(new Views.SetDayAndSeat(selected_rap, selected_film)); 
+            }    
+                
+            MyCollectionView.SelectedItem = null;
         }
     }
 }

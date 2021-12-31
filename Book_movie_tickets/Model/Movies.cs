@@ -17,7 +17,7 @@ namespace Book_movie_tickets.Model
         public string Director { get; set; } //Dao dien
         public string Language { get; set; } //Ngon ngu
         public string Genre { get; set; } //the loai
-        public string Showtime { get; set; } //thoi gian chieu
+        public string Showtime { get; set; } //thoi gian chieu dd/mm/yyyy
         public string Price { get; set; } //gia ve
     }
 }

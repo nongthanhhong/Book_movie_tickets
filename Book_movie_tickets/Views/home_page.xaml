@@ -31,7 +31,8 @@
                         <DataTemplate > 
                             <Grid>
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="2*"></RowDefinition>
+                                    <RowDefinition Height="4*"></RowDefinition>
+                                    <RowDefinition Height="*"></RowDefinition>
                                     <RowDefinition Height="*"></RowDefinition>
                                 </Grid.RowDefinitions>
 
@@ -41,13 +42,18 @@
 
                                 <Image Source="{Binding Poster}" Grid.Row="0" Grid.Column="0"
                                    WidthRequest="300" HeightRequest="200"
-                                   HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" 
+                                   HorizontalOptions="Fill" VerticalOptions="Fill" 
                                    Margin="5"></Image>
                                 
                                 <Label Text="{Binding Title}" FontSize="Large" Grid.Row="1" Grid.Column="0" 
-                               HorizontalOptions="Center" VerticalOptions="Start"
-                                   TextColor="White"
-                               VerticalTextAlignment="End" HorizontalTextAlignment="Center"></Label>
+                                       HorizontalOptions="Center" VerticalOptions="Start"
+                                       TextColor="White"
+                                       VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
+
+                                <Label Text="{Binding Rating, StringFormat='Đánh giá: {0:N}/10'}" FontSize="Large" Grid.Row="2" Grid.Column="0" 
+                                       HorizontalOptions="Center" VerticalOptions="Start"
+                                       TextColor="White"
+                                       VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
                             </Grid>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
