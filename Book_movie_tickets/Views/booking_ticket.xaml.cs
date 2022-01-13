@@ -119,7 +119,7 @@ namespace Book_movie_tickets.Views
         }
 
 
-        private void Button_Clicked(object sender, EventArgs e)
+        public async void Button_Clicked(object sender, EventArgs e)
         {
             String Seat = String.Empty;
             int[] lst = Selected_ticket.selected_seat;
@@ -129,10 +129,11 @@ namespace Book_movie_tickets.Views
             }
 
             Seat = Seat.Remove(Seat.Length - 2, 1);
-            DisplayAlert("Mua thành công", "Tên phim " + Selected_ticket.selected_film.Title +
+            await DisplayAlert("Mua thành công", "Tên phim " + Selected_ticket.selected_film.Title +
                 "\nTại rap: " + Selected_ticket.selected_rap.ten_rap +
                 "\nThời gian: " + Selected_ticket.selected_day.ToString() +
-                "\nCác ghế: " + Seat, "Yes", "No");
+                "\nCác ghế: " + Seat, "OK");
+            Navigation.PopAsync();
             Navigation.PopAsync();
         }
     }

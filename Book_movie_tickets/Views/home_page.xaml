@@ -1,81 +1,80 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Book_movie_tickets.home_page"
-             Title="CINEMA"
-             >
+                     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                     x:Class="Book_movie_tickets.home_page"
+                     Title="CINEMA"
+                     >
 
-    <ContentPage.Content>
-        <ScrollView >
-            <StackLayout Spacing="0">
-                <Frame BackgroundColor="White"
-                       CornerRadius="0"
-                       Padding="2"
-                       >  
-                    
-                       <Label Text="Movie" TextColor="White" FontSize="Title" HeightRequest="50" WidthRequest="500" 
-                               VerticalOptions="Center" HorizontalOptions="Center" 
-                               VerticalTextAlignment="Center" HorizontalTextAlignment="Center"
-                               BackgroundColor="purple"></Label>
-                </Frame>
-                
+    <ScrollView>
+        <Grid RowDefinitions="Auto, Auto, Auto, Auto">
+
+            <Frame Grid.Row="0" BackgroundColor="White" CornerRadius="0" Padding="2" >
+
+                <Label Grid.Row="0" Text="Movie" TextColor="White" FontSize="Title" HeightRequest="50" WidthRequest="500" 
+                                           VerticalOptions="Center" HorizontalOptions="Center" 
+                                           VerticalTextAlignment="Center" HorizontalTextAlignment="Center"
+                                           BackgroundColor="purple"></Label>
+            </Frame>
+
+            <StackLayout Grid.Row="1" HeightRequest="550">
                 <CollectionView x:Name="collection_movie" 
-                            ItemsLayout="HorizontalList"
-                            SelectionMode="Single" 
-                            SelectionChanged="collection_movie_SelectionChanged"
-                            BackgroundColor="purple"
-                            EmptyView="No items to display">
-
+                                        ItemsLayout="HorizontalList"
+                                        SelectionMode="Single" 
+                                        SelectionChanged="collection_movie_SelectionChanged"
+                                        BackgroundColor="purple"
+                                        EmptyView="No items to display"
+                                        >
                     <CollectionView.ItemTemplate >
+                        <DataTemplate >
+                            <Grid RowDefinitions="Auto, Auto, *">
+                                <StackLayout Grid.Row="0">
+                                    <Image Source="{Binding Poster}" 
+                                                           WidthRequest="300" HeightRequest="450"
+                                                           HorizontalOptions="Fill" VerticalOptions="Fill" 
+                                                           Margin="5">
+                                    </Image>
+                                </StackLayout>
 
-                        <DataTemplate > 
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="4*"></RowDefinition>
-                                    <RowDefinition Height="*"></RowDefinition>
-                                    <RowDefinition Height="*"></RowDefinition>
-                                </Grid.RowDefinitions>
+                                <StackLayout Grid.Row="1">
+                                    <Label Text="{Binding Title}" FontSize="Large"
+                                                               HorizontalOptions="Center" VerticalOptions="Start"
+                                                               TextColor="White"
+                                                               VerticalTextAlignment="Center" HorizontalTextAlignment="Center">
+                                    </Label>
+                                </StackLayout>
 
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
-                                </Grid.ColumnDefinitions>
+                                <StackLayout Grid.Row="2">
+                                    <Label Text="{Binding Rating, StringFormat='Đánh giá: {0:N}/10'}" FontSize="Large"
+                                                               HorizontalOptions="Center" VerticalOptions="Start"
+                                                               TextColor="White"
+                                                               VerticalTextAlignment="Center" HorizontalTextAlignment="Center">
 
-                                <Image Source="{Binding Poster}" Grid.Row="0" Grid.Column="0"
-                                   WidthRequest="300" HeightRequest="200"
-                                   HorizontalOptions="Fill" VerticalOptions="Fill" 
-                                   Margin="5"></Image>
-                                
-                                <Label Text="{Binding Title}" FontSize="Large" Grid.Row="1" Grid.Column="0" 
-                                       HorizontalOptions="Center" VerticalOptions="Start"
-                                       TextColor="White"
-                                       VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
+                                    </Label>
+                                </StackLayout>
 
-                                <Label Text="{Binding Rating, StringFormat='Đánh giá: {0:N}/10'}" FontSize="Large" Grid.Row="2" Grid.Column="0" 
-                                       HorizontalOptions="Center" VerticalOptions="Start"
-                                       TextColor="White"
-                                       VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
                             </Grid>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
-                <Frame BackgroundColor="White"
-                       CornerRadius="0"
-                       Padding="2"
-                       >
-                    <Label Text="News" TextColor="White" FontSize="Title" HeightRequest="40" WidthRequest="500" 
-                       VerticalOptions="Center" HorizontalOptions="Center" 
-                       VerticalTextAlignment="End" HorizontalTextAlignment="Center"
-                       BackgroundColor="purple"></Label>
-                </Frame>
-                <ListView x:Name="movie_news" ItemSelected="movie_news_ItemSelected" >
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
             </StackLayout>
-        </ScrollView>
-    </ContentPage.Content>
+
+            <Frame Grid.Row="2" BackgroundColor="White" CornerRadius="0" Padding="2">
+                <Label Grid.Row="2" Text="News" TextColor="White" FontSize="Title" HeightRequest="40" WidthRequest="500" 
+                                   VerticalOptions="Center" HorizontalOptions="Center" 
+                                   VerticalTextAlignment="End" HorizontalTextAlignment="Center"
+                                   BackgroundColor="purple"></Label>
+            </Frame>
+
+
+            <!-- <ListView x:Name="movie_news" ItemSelected="movie_news_ItemSelected" >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>-->
+        </Grid>
+    </ScrollView>
 </ContentPage>
