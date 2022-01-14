@@ -45,7 +45,7 @@
                             <ColumnDefinition></ColumnDefinition>
                         </Grid.ColumnDefinitions>
                         <Label Text="{Binding Director, StringFormat='Đạo diễn: {0:N}'}" TextColor="Black" FontSize="Medium" Grid.Row="0" Grid.Column="0"></Label>
-                        <Label Text="{Binding Rating, StringFormat='Ranting: {0:N}'}" TextColor="Black" FontSize="Medium" Grid.Row="1" Grid.Column="0"></Label>
+                        <Label Text="{Binding Rating, StringFormat='Rating: {0:N}'}" TextColor="Black" FontSize="Medium" Grid.Row="1" Grid.Column="0"></Label>
                         <Label Text="{Binding Description, StringFormat='Giới thiệu: {0:N}'}" TextColor="Black" FontSize="Medium" Grid.Row="2" Grid.Column="0"></Label>
                         <Label Text="{Binding Showtime, StringFormat='Ngày công chiếu: {0:N}'}" TextColor="Black" FontSize="Medium" Grid.Row="3" Grid.Column="0"></Label>
                     </Grid>

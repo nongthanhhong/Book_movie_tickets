@@ -24,19 +24,25 @@ namespace Book_movie_tickets.Views
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            string[] a = Seats.Text.Split(' ');
-            int[] val = new int[a.Length];
-            for(int i = 0; i < a.Length;i++)
+            if(Seats.Text != null && Seats.Text != " ")
+            {
+                string[] a = Seats.Text.Split(' ');
+                int[] val = new int[a.Length];
+                for (int i = 0; i < a.Length; i++)
                     val[i] = int.Parse(a[i]);
 
-            selected_ticket.selected_seat = val;
-            selected_ticket.selected_day = date_picker.Date;
+                selected_ticket.selected_seat = val;
+                selected_ticket.selected_day = date_picker.Date;
 
-            if (selected_ticket.selected_film != null)
+                if (selected_ticket.selected_film != null)
+                {
+                    Navigation.PushAsync(new Views.booking_ticket(selected_ticket));
+                }
+            }    
+            else
             {
-                Navigation.PushAsync(new Views.booking_ticket(selected_ticket));
-            }
-
+                DisplayAlert("Thông báo", "Vui lòng nhập số ghế muốn mua", "OK");
+            }    
         }
     }
 }

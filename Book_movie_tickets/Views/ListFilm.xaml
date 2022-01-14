@@ -6,7 +6,7 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
-                <CollectionView x:Name="Coll_film" Margin="15"
+                <CollectionView x:Name="Coll_film" Margin="5"
                                 SelectionMode="Single" 
                                 EmptyView="No items to display"
                             SelectionChanged="Coll_film_SelectionChanged">
