@@ -8,6 +8,7 @@ namespace Book_movie_tickets
     {
         public string newName { get; set; }
         public string newImg { get; set; }
+        public string newDetail { get; set; }
         public New()
         {
 

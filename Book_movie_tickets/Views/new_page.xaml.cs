@@ -16,9 +16,14 @@ namespace Book_movie_tickets
         void newInit()
         {
             newList = new List<New>();
-            newList.Add(new New { newName = "C'TEN - XEM PHIM CHỉ 45K LÚC 10H", newImg = "Cten.jpg" });
-            newList.Add(new New { newName = "HSSV TẸT GA 45K SUỐT TUẦN TOÀN HỆ THỐNG", newImg = "HSSV.jpg" });
-            newList.Add(new New { newName = "C'MEMBER - NGÀY HỘI THÀNH VIÊN", newImg = "Member.jpg" });
+            newList.Add(new New {
+                newName = "[THE CONJURING: MA XUI QUỶ KHIẾN] - HÉ LỘ TRAILER CHÍNH THỨC CHO PHẦN TIẾP THEO", 
+                newImg = "conjuring.jpg",
+                newDetail="Hẹn hò ra rạp từ tháng 9/2020, song do ảnh hưởng của COVID-19, cho tới tận mùa hè năm nay, khán giả thế giới mới được thưởng thức phần tiếp theo..."});
+            newList.Add(new New { 
+                newName = "[THÁM TỬ LỪNG DANH CONAN: VIÊN ĐẠN ĐỎ] - GIẢI MÃ THƯƠNG HIỆU CONAN", 
+                newImg = "conan.jpg",
+                newDetail="Lần đầu ra mắt năm 1994, Conan giữ nguyên sức hấp dẫn sau hơn hai thập kỷ, là một trong những thương hiệu anime/manga nổi tiếng bậc nhất trên thế giới.."});
             lstNew.ItemsSource = newList;
 
         }

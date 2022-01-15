@@ -10,21 +10,21 @@ using Xamarin.Forms.Xaml;
 namespace Book_movie_tickets
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class user_page : ContentPage
+    public partial class Login : ContentPage
     {
-        public user_page()
+        public Login()
         {
             InitializeComponent();
+        }
+
+        private void DN_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new Main_Tabbed());
         }
 
         private void DK_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new DK());
-        }
-
-        private void DN_Clicked(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new DN());
         }
     }
 }

@@ -1,10 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Book_movie_tickets.new_page"
-             Title="Tin Tức">
+             x:Class="Book_movie_tickets.voucher_page">
     <ContentPage.Content>
-        <ListView x:Name="lstNew" RowHeight="400">
+        <ListView x:Name="lstVoucher" RowHeight="400">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -18,17 +17,15 @@
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
 
-                            <Image Source="{Binding newImg}" Grid.Row="0" Grid.Column="0" />
+                            <Image Source="{Binding voucherImg}" Grid.Row="0" Grid.Column="0" />
 
-                            <Label Text="{Binding newName}" Grid.Row="1" Grid.Column="0"
+                            <Label Text="{Binding voucherName}" Grid.Row="1" Grid.Column="0"
                                    FontAttributes="Bold" FontSize="Large" VerticalOptions="Center" />
-                            <Label Text="{Binding newDetail}" Grid.Row="2" Grid.Column="0"
-                                   FontAttributes="None" FontSize="12"/>
                         </Grid>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
-            
+
         </ListView>
     </ContentPage.Content>
 </ContentPage>
